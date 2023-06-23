@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container py-5">
+      <h2 class="pb-3">Quản lý người</h2>
+      <div class="container">
+        <select
+          class="form-select w-25 mb-5"
+          id="selectList"
+          aria-label="Default select example"
+        ></select>
+      </div>
+      <button class="btn btn-warning" onclick="sortList()">Sort</button>
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <div class="col-3">
+              <div
+                class="nav flex-column nav-pills"
+                id="v-pills-tab"
+                role="tablist"
+                aria-orientation="vertical"
+              >
+                <a
+                  class="nav-link active"
+                  id="v-pills-home-tab"
+                  data-toggle="pill"
+                  href="#square"
+                  role="tab"
+                  aria-controls="v-pills-home"
+                  aria-selected="true"
+                  >Customer</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-profile-tab"
+                  data-toggle="pill"
+                  href="#rectangle"
+                  role="tab"
+                  aria-controls="v-pills-profile"
+                  aria-selected="false"
+                  >Student</a
+                >
+                <a
+                  class="nav-link"
+                  id="v-pills-messages-tab"
+                  data-toggle="pill"
+                  href="#circle"
+                  role="tab"
+                  aria-controls="v-pills-messages"
+                  aria-selected="false"
+                  >Employee</a
+                >
+              </div>
+            </div>
+            <div class="col-9 border p-3">
+              <div class="tab-content" id="v-pills-tabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="square"
+                  role="tabpanel"
+                  aria-labelledby="v-pills-home-tab"
+                >
+                  <p>Customer</p>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cid"
+                      placeholder="Nhập ID"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Họ tên"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="address"
+                      placeholder="Nhập Địa chỉ"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      placeholder="Nhập email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="bill"
+                      placeholder="Nhập đơn giá"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="textarea"
+                      class="form-control"
+                      id="review"
+                      placeholder="Nhập đánh giá"
+                    />
+                  </div>
+                  <button
+                    id="addCustomer"
+                    type="submit"
+                    class="btn btn-primary"
+                  >
+                    Thêm
+                  </button>
+                  <button
+                    id="editCustomer"
+                    type="submit"
+                    class="btn btn-warning"
+                  >
+                    Sửa
+                  </button>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="rectangle"
+                  role="tabpanel"
+                  aria-labelledby="v-pills-profile-tab"
+                >
+                  <p>Student</p>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="sid"
+                      placeholder="Nhập ID"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="sname"
+                      placeholder="Họ tên"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="saddress"
+                      placeholder="Nhập Địa chỉ"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="semail"
+                      placeholder="Nhập email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="toan"
+                      placeholder="Nhập điểm toán"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="ly"
+                      placeholder="Nhập điểm lý"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="hoa"
+                      placeholder="Nhập điểm hóa"
+                    />
+                  </div>
+                  <button id="addStudent" type="submit" class="btn btn-primary">
+                    Thêm
+                  </button>
+                  <button
+                    id="editStudent"
+                    type="submit"
+                    class="btn btn-warning"
+                  >
+                    Sửa
+                  </button>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="circle"
+                  role="tabpanel"
+                  aria-labelledby="v-pills-messages-tab"
+                >
+                  <p>Employee</p>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="eid"
+                      placeholder="Nhập ID"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="ename"
+                      placeholder="Họ tên"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="eaddress"
+                      placeholder="Nhập Địa chỉ"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="eemail"
+                      placeholder="Nhập email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="days"
+                      placeholder="Nhập số ngày làm"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="luong"
+                      placeholder="Nhập mức lương"
+                    />
+                  </div>
+                  <button
+                    id="addEmployee"
+                    type="submit"
+                    class="btn btn-primary"
+                  >
+                    Thêm
+                  </button>
+                  <button
+                    id="editEmployee"
+                    type="submit"
+                    class="btn btn-warning"
+                  >
+                    Sửa
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="main" class="col-6 border p-3">
+        </div>
+      </div>
+    </div>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
